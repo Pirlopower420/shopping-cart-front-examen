@@ -26,6 +26,7 @@ function getProducts() {
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Categoría</th>
                                 <th scope="col">Imagen</th>
+                                <th scope="col">Acciones</th> <!-- Nueva columna para acciones -->
                             </tr>
                         </thead>
                         <tbody>
@@ -40,6 +41,9 @@ function getProducts() {
                         <td>${product.description.substring(0, 100)}...</td>
                         <td>${product.category}</td>
                         <td><img src="${product.image}" alt="${product.title}" height="50"></td>
+                        <td>
+                            <button class="btn btn-primary" onclick="addToCart('${product.title}', ${product.price})">Añadir al carrito</button>
+                        </td>
                     </tr>
                 `;
             });
@@ -58,4 +62,46 @@ function getProducts() {
     .catch(error => {
         infoDiv.innerHTML = `<p class="text-danger">Error al obtener los productos: ${error}</p>`;
     });
+}
+
+
+let cart = [];
+
+
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+    alert(`${productName} ha sido añadido al carrito.`);
+}
+
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+
+function updateCart() {
+    const cartList = document.getElementById('cart');
+    cartList.innerHTML = '';
+    let total = 0; 
+
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.textContent = `${item.name} - $${item.price}`;
+        
+        
+        const removeButton = document.createElement('button');
+        removeButton.className = 'btn btn-danger btn-sm';
+        removeButton.textContent = 'Eliminar';
+        removeButton.onclick = () => removeFromCart(index);
+        
+        li.appendChild(removeButton);
+        cartList.appendChild(li);
+        total += item.price; 
+    });
+
+    
+    document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
 }
