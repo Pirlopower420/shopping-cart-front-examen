@@ -13,6 +13,9 @@ dashBoard (donde se encuantra toda la zona administrativa)
 👨‍💻 Jhon Gomez - 192436
 👨‍💻 victor manzano - 192332
 
-![carrito de compras](https://github.com/user-attachments/assets/0c4f1c9e-f525-4eb1-ab05-99e36cc386c0)
+![image](https://github.com/user-attachments/assets/68b92a77-d022-467e-8204-34bdf8951d9d)
+
 ![detalles de usuario](https://github.com/user-attachments/assets/f793e226-bec1-42e8-ab17-54fa68c1259e)
+
+![carrito de compras](https://github.com/user-attachments/assets/0c4f1c9e-f525-4eb1-ab05-99e36cc386c0)
 
