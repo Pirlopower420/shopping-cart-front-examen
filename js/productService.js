@@ -26,7 +26,7 @@ function getProducts() {
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Categoría</th>
                                 <th scope="col">Imagen</th>
-                                <th scope="col">Acciones</th> <!-- Nueva columna para acciones -->
+                                <th scope="col">Acciones</th> 
                             </tr>
                         </thead>
                         <tbody>

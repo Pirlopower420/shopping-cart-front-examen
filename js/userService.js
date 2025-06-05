@@ -27,6 +27,7 @@ function getUsers(){
                     <th scope="col">username</th>
                     <th scope="col">email</th>
                     <th scope="col">password</th>
+                     <th scope="col">Info de usuario</th>
                     </tr>
                 </thead>
                 <tbody>
